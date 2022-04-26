@@ -3,4 +3,6 @@ public struct CKTools {
 
     public init() {
     }
+    
+    let version = "1.0.0"
 }
