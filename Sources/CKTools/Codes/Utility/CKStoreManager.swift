@@ -8,7 +8,7 @@
 import Foundation
 import StoreKit
 
-public protocol StoreDelegate: AnyObject {
+public protocol CKStoreDelegate: AnyObject {
     
     func storeProducts(_ products:[SKProduct]?,error:Error?)
     
@@ -24,12 +24,12 @@ public protocol StoreDelegate: AnyObject {
 public class CKStoreManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObserver {
     
     public static let shared = CKStoreManager()
-    private weak var delegate:StoreDelegate?
+    private weak var delegate:CKStoreDelegate?
     private var hasRestorablePurchases = false
     
     private override init() {}
     
-    public func start(delegate:StoreDelegate?) {
+    public func start(delegate:CKStoreDelegate?) {
         
         self.delegate = delegate
         SKPaymentQueue.default().add(self)
