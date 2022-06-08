@@ -47,7 +47,7 @@ public class CKStoreManager: NSObject, SKProductsRequestDelegate, SKPaymentTrans
     
     // MARK: - SKProductsRequest
     
-    func getProducts(_ productIds:Set<String>) {
+    public func getProducts(_ productIds:Set<String>) {
         
         let request = SKProductsRequest(productIdentifiers: productIds)
         request.delegate = self
