@@ -10,15 +10,15 @@ import StoreKit
 
 public protocol StoreDelegate: AnyObject {
     
-    public func storeProducts(_ products:[SKProduct]?,error:Error?)
+    func storeProducts(_ products:[SKProduct]?,error:Error?)
     
-    public func storePurchaseDidSucceed()
+    func storePurchaseDidSucceed()
     
-    public func storeRestoreDidSucceed()
+    func storeRestoreDidSucceed()
     
-    public func storeError(_ error: SKError?)
+    func storeError(_ error: Error?)
     
-    public func storeNoRestorablePurchases()
+    func storeNoRestorablePurchases()
 }
 
 public class CKStoreManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObserver {
@@ -83,15 +83,15 @@ public class CKStoreManager: NSObject, SKProductsRequestDelegate, SKPaymentTrans
                 transaction in
                 
                 switch transaction.transactionState {
-                case .purchasing:
-                case .deferred:
+                case .purchasing: break
+                case .deferred: break
                 case .purchased:
                     self?.handlePurchased(transaction: transaction)
                 case .failed:
                     self?.handleFailed(transaction: transaction)
                 case .restored:
                     self?.handleRestored(transaction: transaction)
-                default:
+                default: break
                 }
             })
         }
