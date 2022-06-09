@@ -12,9 +12,9 @@ public protocol CKStoreDelegate: AnyObject {
     
     func storeProducts(_ products:[SKProduct]?,error:Error?)
     
-    func storePurchaseDidSucceed()
+    func storePurchaseDidSucceed(transaction:SKPaymentTransaction)
     
-    func storeRestoreDidSucceed()
+    func storeRestoreDidSucceed(transaction:SKPaymentTransaction)
     
     func storeError(_ error: Error?)
     
@@ -120,7 +120,7 @@ public class CKStoreManager: NSObject, SKProductsRequestDelegate, SKPaymentTrans
     
     private func handlePurchased(transaction:SKPaymentTransaction) {
         
-        delegate?.storePurchaseDidSucceed()
+        delegate?.storePurchaseDidSucceed(transaction: transaction)
         SKPaymentQueue.default().finishTransaction(transaction)
     }
     
@@ -133,7 +133,7 @@ public class CKStoreManager: NSObject, SKProductsRequestDelegate, SKPaymentTrans
     private func handleRestored(transaction:SKPaymentTransaction) {
         
         hasRestorablePurchases = true
-        delegate?.storeRestoreDidSucceed()
+        delegate?.storeRestoreDidSucceed(transaction: transaction)
         SKPaymentQueue.default().finishTransaction(transaction)
     }
 }
