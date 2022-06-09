@@ -47,4 +47,13 @@ public class CKUtility {
             return false
         }
     }
+    
+    public static func isDebug() -> Bool {
+        
+        #if DEBUG
+        return true
+        #else
+        return false
+        #endif
+    }
 }
