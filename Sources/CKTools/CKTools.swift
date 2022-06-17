@@ -4,5 +4,5 @@ public struct CKTools {
     public init() {
     }
     
-    let version = "1.1.5"
+    let version = "1.1.6"
 }

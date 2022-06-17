@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-extension UIColor {
+public extension UIColor {
     convenience init?(_ string: String) {
         let hex = string.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
         
