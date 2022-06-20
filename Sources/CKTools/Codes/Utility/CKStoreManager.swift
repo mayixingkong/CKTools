@@ -108,14 +108,14 @@ public class CKStoreManager: NSObject, SKProductsRequestDelegate, SKPaymentTrans
     
     public func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
         
-        if !hasRestorablePurchases {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+2, execute: {
+            [self] in
             
-            DispatchQueue.main.async {
-                [weak self] in
-                
-                self?.delegate?.storeNoRestorablePurchases()
+            if !hasRestorablePurchases {
+            
+                delegate?.storeNoRestorablePurchases()
             }
-        }
+        })
     }
     
     private func handlePurchased(transaction:SKPaymentTransaction) {
