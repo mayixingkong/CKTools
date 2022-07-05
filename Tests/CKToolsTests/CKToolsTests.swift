@@ -6,6 +6,6 @@ final class CKToolsTests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct
         // results.
-        XCTAssertEqual(CKTools().text, "Hello, World!")
+//        XCTAssertEqual(CKTools().text, "Hello, World!")
     }
 }

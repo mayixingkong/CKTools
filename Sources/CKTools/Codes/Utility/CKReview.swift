@@ -1,9 +1,6 @@
 //
 //  Review.swift
-//  InsGet
-//
-//  Created by 莹 on 2021/6/23.
-//
+//  CKTools
 
 import Foundation
 import StoreKit

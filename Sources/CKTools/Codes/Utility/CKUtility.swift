@@ -1,10 +1,6 @@
 //
 //  CKUtility.swift
 //  CKTools
-//
-//  Created by mayi on 2018/3/9.
-//  Copyright © 2018年 Inscopy. All rights reserved.
-//
 
 import UIKit
 import CommonCrypto

@@ -1,8 +1,7 @@
 public struct CKTools {
-    public private(set) var text = "Hello, World!"
 
+    public let version = "1.1.8"
+    
     public init() {
     }
-    
-    let version = "1.1.7"
 }

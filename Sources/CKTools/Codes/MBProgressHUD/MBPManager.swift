@@ -1,10 +1,6 @@
 //
 //  MBPManager.swift
 //  CKTools
-//
-//  Created by mayi on 2018/3/9.
-//  Copyright © 2018年 Inscopy. All rights reserved.
-//
 
 import Foundation
 import MBProgressHUD
@@ -53,21 +49,22 @@ public class MBPManager:NSObject {
     
     public func showSuccess(text:String?,view:UIView,delay:TimeInterval = 1.5,completion:CKHandler? = nil) {
     
-        showCustomHud(named: "success", text: text, view: view, delay: delay, completion: completion)
+        showCustomHud(imageNamed: "checkmark", text: text, view: view, delay: delay, completion: completion)
     }
     
     public func showFail(text:String?,view:UIView,delay:TimeInterval = 1.5,completion:CKHandler? = nil) {
         
-        showCustomHud(named: "fail", text: text, view: view, delay: delay, completion: completion)
+        showCustomHud(imageNamed: "xmark", text: text, view: view, delay: delay, completion: completion)
     }
     
-    private func showCustomHud(named:String,text:String?,view:UIView,delay:TimeInterval,completion:CKHandler? = nil) {
+    private func showCustomHud(imageNamed:String,text:String?,view:UIView,delay:TimeInterval,completion:CKHandler? = nil) {
         
         let hud = MBProgressHUD.showAdded(to: view, animated: true)
         hud.mode = .customView
         
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
-        imageView.image = UIImage(named: named, in: Bundle.module, with: nil)
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 60, height: 60))
+        imageView.image = UIImage(systemName: imageNamed)
+        imageView.tintColor = UIColor.label
         hud.customView = imageView
         
         hud.label.text = text

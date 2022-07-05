@@ -1,10 +1,6 @@
 //
 //  CKHttpClient.swift
 //  CKTools
-//
-//  Created by mayi on 2018/11/26.
-//  Copyright © 2018 Inscopy. All rights reserved.
-//
 
 import UIKit
 import Alamofire

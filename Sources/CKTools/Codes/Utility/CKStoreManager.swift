@@ -1,9 +1,5 @@
 //
-//  File.swift
-//  
-//
-//  Created by 莹 on 2022/5/23.
-//
+//  CKStoreManager.swift
 
 import Foundation
 import StoreKit
